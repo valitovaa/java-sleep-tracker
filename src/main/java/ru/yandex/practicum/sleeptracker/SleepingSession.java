@@ -8,7 +8,7 @@ import java.time.LocalTime;
 public class SleepingSession {
     private final LocalDateTime sleepStartTime;
     private final LocalDateTime wakeUpTime;
-    private  final QualityOfSleep qualityOfSleep;
+    private final QualityOfSleep qualityOfSleep;
 
     public SleepingSession(LocalDateTime fallingAsleepTime, LocalDateTime wakingUpTime, QualityOfSleep qualityOfSleep) {
         this.sleepStartTime = fallingAsleepTime;
@@ -32,19 +32,21 @@ public class SleepingSession {
 
 
     //Date
-    public LocalDate getSleepStartDate(){
+    public LocalDate getSleepStartDate() {
         return sleepStartTime.toLocalDate();
     }
-    public LocalDate getWakeUpDate(){
+
+    public LocalDate getWakeUpDate() {
         return wakeUpTime.toLocalDate();
     }
 
 
     //Time
-    public LocalTime getSleepStartTime(){
+    public LocalTime getSleepStartTime() {
         return sleepStartTime.toLocalTime();
     }
-    public LocalTime getWakeUpTime(){
+
+    public LocalTime getWakeUpTime() {
         return wakeUpTime.toLocalTime();
     }
 

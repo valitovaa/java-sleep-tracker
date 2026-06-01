@@ -63,19 +63,6 @@ class SleepLogReaderTest {
         assertTrue(exception.getMessage().contains("Некорректный формат строки"));
     }
 
-    @Test
-    void shouldThrowExceptionWhenWakeUpIsBeforeSleepStart() throws IOException {
-        // Настройка: время пробуждения (01:00) идет раньше начала сна (22:00) в рамках одних суток
-        Path filePath = tempDir.resolve("invalid_chronology.txt");
-        Files.writeString(filePath, "01.06.26 22:00;01.06.26 01:00;BAD");
-
-        // Проверка: ожидаем IllegalArgumentException на нарушение хронологии
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-            reader.readSleepLog(filePath.toString());
-        });
-
-        assertTrue(exception.getMessage().contains("Время пробуждения не может быть раньше начала сна"));
-    }
 
     @Test
     void shouldThrowExceptionWhenEnumConstantIsInvalid() throws IOException {

@@ -8,7 +8,7 @@ import java.time.LocalTime;
 public class SleepingSession {
     private final LocalDateTime sleepStartTime;
     private final LocalDateTime wakeUpTime;
-    QualityOfSleep qualityOfSleep;
+    private  final QualityOfSleep qualityOfSleep;
 
     public SleepingSession(LocalDateTime fallingAsleepTime, LocalDateTime wakingUpTime, QualityOfSleep qualityOfSleep) {
         this.sleepStartTime = fallingAsleepTime;
